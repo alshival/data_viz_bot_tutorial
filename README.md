@@ -1,8 +1,12 @@
-# Streamlit FrontEnd App Template for POCs
+# Alshival's Graphing Calculator
 
-## Current System :
+## Setup
+Grab your openAi API key and create the file `.streamlit/secrets.toml`:
 
-1. 3.9<=Python<=3.10
+```
+openai_token = "sk-APIKEY"
+openai_model = "gpt-3.5-turbo-0125"
+```
 
 ## Install
 
