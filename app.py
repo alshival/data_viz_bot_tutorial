@@ -8,7 +8,7 @@ st.image(image="./logo.png", width=300)
 
 st.title("Alshival's Graphing Calculator")
 st.markdown("For parseltongues.")
-st.markdown("e.g. *'Plot a torus in 3D.'* or *'Plot sin(x) between -1 and 1. Fill the area under the curve.'*")
+st.markdown("Examples: **'Plot a torus in 3D.'** or **'Plot sin(x) between -1 and 1. Fill the area under the curve.'**")
 def show_time(ttime):
     st.success(f"This took {ttime}s")
 
