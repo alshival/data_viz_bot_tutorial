@@ -5,6 +5,10 @@ import tiktoken
 from model.finetune_data import samples_pair
 import random 
 import re
+import pandas as pd
+import scipy
+import json
+import numpy as np
 
 openai_token = st.secrets['openai_token']
 openai_model = st.secrets['openai_model']
@@ -111,10 +115,10 @@ Do not run `fig.show()` in your script. That will be handled later.
 '''}
         dataviz_messages.append(instructions)
 
-        for x in random.sample(samples_pair,4):
+        for x in random.sample(samples_pair,6):
             dataviz_messages.append(x[0])
             dataviz_messages.append(x[1])
-        
+        dataviz_messages = check_tokens(dataviz_messages,8000)
         dataviz_messages.append(new_prompt)
         chat_completion = client.chat.completions.create(
             messages = dataviz_messages,
@@ -142,6 +146,6 @@ Do not run `fig.show()` in your script. That will be handled later.
                 print(f"Error running code: {e} \n\n {extracted_code}")
                 end_time = time.time()
                 ttime = end_time - start_time
-                return f"Error running SQL query: {e}",None, None, None, round(ttime,2)
+                return f"I ran into an error:\n {e} \n Try asking again.",None, None, None, extracted_code, round(ttime,2)
         ttime=end_time-start_time
-    return result, figure, data, answer, round(ttime,2)
+    return result, figure, data, answer, extracted_code, round(ttime,2)
