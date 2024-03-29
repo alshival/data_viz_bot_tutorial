@@ -41,7 +41,7 @@ if prompt := st.chat_input("Hello! How can I help you ?"):
         message_placeholder = st.empty()
         full_response, figure, data, answer, code, ttime = ask(new_prompt)
         if code is not None:
-            my_expander = st.expander(label = "Python Code")
+            my_expander = st.expander(label = "Python")
             with my_expander:
                 st.markdown(f'''
 ```
