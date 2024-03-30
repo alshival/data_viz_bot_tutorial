@@ -1,9 +1,8 @@
 import streamlit as st
 import time
-
+import re 
 # import our model
 from model.openAi_call import *
-
 st.image(image="./logo.png", width=300)
 
 st.title("Alshival's Graphing Calculator")
@@ -41,6 +40,9 @@ if prompt := st.chat_input("Hello! How can I help you ?"):
         message_placeholder = st.empty()
         full_response, figure, data, answer, code, ttime = ask(new_prompt)
         if code is not None:
+            response_with_code = re.sub(r'```(.*?)```','', full_response, flags = re.DOTALL)
+            message_placeholder.markdown(response_with_code + "▌")
+            message_placeholder.markdown(response_with_code)
             my_expander = st.expander(label = "Python")
             with my_expander:
                 st.markdown(f'''

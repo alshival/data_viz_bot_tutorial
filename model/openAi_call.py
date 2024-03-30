@@ -39,7 +39,7 @@ def handle_gifs(response):
     if reg:
         try:
             gif_url = gif_search(reg.group(1))
-            return re.sub(gif_regex_string,'  '+f'![]({gif_url})',response)
+            return re.sub(gif_regex_string,f'![]({gif_url})',response)
         except:
             return response
     else:
@@ -118,7 +118,7 @@ Here's an example:
 #################################
 User: Plot the unit circle on the complex plane.
 Assistant:
-Sure GIF={anime math}
+Sure. GIF={anime math}
 ```
 import numpy as np
 import plotly.graph_objects as go

@@ -1,7 +1,7 @@
 samples = [
-{'role':'user','content':"""Create a 3D torus using plotly."""},
+{'role':'user','content':"""Create a 3D torus."""},
 {'role':'assistant','content':f"""
-Here's a graph of 3D torus: GIF={{anime girl sunglasses}}
+Here's a graph of 3D torus. GIF={{anime girl sunglasses}}
 ```
 import numpy as np
 import plotly.graph_objects as go
@@ -27,7 +27,7 @@ COMPILE=TRUE
 """},
 {'role':'user','content':"""Plot the function f(x) = 2x^2 + 3x +5. Add the tangent line at x = 1. Please add the equation of the tangent line as an annotation."""},
 {'role':'assistant','content':f"""
-You've got it GIF={{anime girl thumbs up}}
+You've got it. GIF={{anime girl thumbs up}}
 ```
 import numpy as np
 import plotly.graph_objects as go
@@ -66,34 +66,6 @@ fig.add_annotation(x=0, y=max(f(x)), text=f"Tangent line: y = {{slope:.2f}}x + {
 ```
 COMPILE=TRUE
 """},
-{'role':'user','content':"""Can you plot it in plotly?"""},
-{'role':'assistant','content':f"""
-Sure thing! GIF={{anime girl happy}}
-```
-import numpy as np
-import plotly.graph_objects as go
-
-# Define the x and y range
-x = np.linspace(-6, 6, 100)
-y = np.linspace(-6, 6, 100)
-
-# Create a meshgrid for x and y
-X, Y = np.meshgrid(x, y)
-
-# Define the z value as sin of sqrt of x^2 + y^2
-R = np.sqrt(X**2 + Y**2)
-Z = np.sin(R)
-
-# Create a 3D plot
-fig = go.Figure(data=[go.Surface(z=Z, x=X, y=Y)])
-
-# Update the layout
-fig.update_layout(title='3D Sin Wave Surface', autosize=False,
-                  width=500, height=500,
-                  margin=dict(l=50, r=50, b=65, t=90))
-```
-COMPILE=TRUE
-"""},
 {'role':'user','content':"""Plot the function f(x) = x^2 between -1 and 1. Color int the portion between 0 and 1, and annotate the graph with the value of the integral of f(x) from 0 to 1."""},
 {'role':'assistant','content':f"""
 I've got you. GIF={{anime girl coding}}
@@ -127,7 +99,7 @@ fig.update_layout(title='Integration of f(x) = -3x^2+2x+1', xaxis_title='x', yax
 ```
 COMPILE=TRUE
 """},
-{'role':'user','content':"""Plot the function f(x) = x^2 between -1 and 1. Color in the portion between 0 and 1, and annotate the graph with the value of the integral of f(x) from 0 to 1 using plotly."""},
+{'role':'user','content':"""Plot the function f(x) = x^2 between -1 and 1. Color in the portion between 0 and 1, and annotate the graph with the value of the integral of f(x) from 0 to 1."""},
 {'role':'assistant','content':f"""
 I've got you. GIF={{anime girl wink}}
 ```
@@ -196,9 +168,9 @@ fig.update_layout(title='Plot of the Golden Spiral',
 ```
 COMPILE=TRUE
 """},
-{'role':'user','content':"""Plot f(x) = e^x mod 3 between -2 and 5. Use plotly."""},
+{'role':'user','content':"""Plot f(x) = e^x mod 3 between -2 and 5."""},
 {'role':'assistant','content':f"""
-Here you go. 
+Here you go. GIF={{anime girl lazy}}
 ```
 import numpy as np
 import plotly.graph_objects as go
@@ -228,7 +200,7 @@ COMPILE=TRUE
 """},
 {'role':'user','content':"""Plot the unit circle on the complex plane."""},
 {'role':'assistant','content':f"""
-Sure GIF={{anime girl math}}
+Sure. GIF={{anime girl math}}
 ```
 import numpy as np
 import plotly.graph_objects as go
