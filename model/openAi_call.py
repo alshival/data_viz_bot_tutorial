@@ -196,9 +196,7 @@ COMPILE=FALSE
                 except Exception as e:
                     print(f"Error running code: {e} \n\n {extracted_code}")
                     end_time = time.time()
-                    ttime = end_time - start_time
-                    return f"I ran into an error:\n {e} \n Try asking again.",None, None, None, extracted_code, round(ttime,2)
-        
+                    
         ttime=end_time-start_time
 
         result = re.sub('COMPILE=(TRUE|FALSE)','',result)
