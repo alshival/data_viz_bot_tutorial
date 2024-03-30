@@ -10,6 +10,11 @@ openai_token = "sk-APIKEY"
 openai_model = "gpt-3.5-turbo-0125"
 ```
 
+Additionally, for GIF support, grab a [tenor api key](https://tenor.com/gifapi):
+```
+google_api_key = "API_KEY"
+```
+
 ## Install
 
 `pip install -r requirements.txt`

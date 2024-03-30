@@ -1,6 +1,8 @@
 samples = [
 {'role':'user','content':"""Create a 3D torus using plotly."""},
 {'role':'assistant','content':f"""
+Here's a graph of 3D torus: GIF={{anime girl sunglasses}}
+```
 import numpy as np
 import plotly.graph_objects as go
 
@@ -20,10 +22,13 @@ fig = go.Figure(data=[go.Surface(x=x, y=y, z=z)])
 fig.update_layout(title='3D Torus', autosize=False,
                   width=800, height=800,
                   margin=dict(l=50, r=50, b=100, t=100))
+```
+COMPILE=TRUE
 """},
 {'role':'user','content':"""Plot the function f(x) = 2x^2 + 3x +5. Add the tangent line at x = 1. Please add the equation of the tangent line as an annotation."""},
 {'role':'assistant','content':f"""
-
+You've got it GIF={{anime girl thumbs up}}
+```
 import numpy as np
 import plotly.graph_objects as go
 
@@ -58,9 +63,13 @@ fig.update_layout(title="Function and Tangent Line", xaxis_title="x", yaxis_titl
 slope = df(a)
 intercept = f(a) - slope*a
 fig.add_annotation(x=0, y=max(f(x)), text=f"Tangent line: y = {{slope:.2f}}x + {{intercept:.2f}}", showarrow=False)
+```
+COMPILE=TRUE
 """},
 {'role':'user','content':"""Can you plot it in plotly?"""},
 {'role':'assistant','content':f"""
+Sure thing! GIF={{anime girl happy}}
+```
 import numpy as np
 import plotly.graph_objects as go
 
@@ -82,9 +91,13 @@ fig = go.Figure(data=[go.Surface(z=Z, x=X, y=Y)])
 fig.update_layout(title='3D Sin Wave Surface', autosize=False,
                   width=500, height=500,
                   margin=dict(l=50, r=50, b=65, t=90))
+```
+COMPILE=TRUE
 """},
 {'role':'user','content':"""Plot the function f(x) = x^2 between -1 and 1. Color int the portion between 0 and 1, and annotate the graph with the value of the integral of f(x) from 0 to 1."""},
 {'role':'assistant','content':f"""
+I've got you. GIF={{anime girl coding}}
+```
 import numpy as np
 import plotly.graph_objects as go
 from scipy import integrate
@@ -111,10 +124,13 @@ fig.add_annotation(text=integral_text,
                    x=0.8, y=0.8, showarrow=False)
 
 fig.update_layout(title='Integration of f(x) = -3x^2+2x+1', xaxis_title='x', yaxis_title='f(x)')
+```
+COMPILE=TRUE
 """},
 {'role':'user','content':"""Plot the function f(x) = x^2 between -1 and 1. Color in the portion between 0 and 1, and annotate the graph with the value of the integral of f(x) from 0 to 1 using plotly."""},
 {'role':'assistant','content':f"""
-
+I've got you. GIF={{anime girl wink}}
+```
 import numpy as np
 from scipy.integrate import quad
 import plotly.graph_objects as go
@@ -149,10 +165,13 @@ layout = go.Layout(annotations=[dict(x=0.5, y=0.2, text=f'Integral = {{integral:
 
 # Create a figure from the traces and layout, and show it
 fig = go.Figure(data=[trace1, trace2], layout=layout)
+```
+COMPILE=TRUE
 """},
 {'role':'user','content':"""Plot the golden spiral starting at radius 1."""},
 {'role':'assistant','content':f"""
-
+Ok. GIF={{anime girl dizzy}}
+```
 import numpy as np
 import plotly.graph_objs as go
 
@@ -174,10 +193,13 @@ fig = go.Figure(data=go.Scatter(x=x, y=y, mode='lines'))
 fig.update_layout(title='Plot of the Golden Spiral',
                   xaxis_title='x',
                   yaxis_title='y')
+```
+COMPILE=TRUE
 """},
 {'role':'user','content':"""Plot f(x) = e^x mod 3 between -2 and 5. Use plotly."""},
 {'role':'assistant','content':f"""
-
+Here you go. 
+```
 import numpy as np
 import plotly.graph_objects as go
 
@@ -201,10 +223,13 @@ fig.update_layout(title='Plot of f(x) = e^x mod 3',
                   height=500,
                   margin=dict(l=50,r=50,b=100,t=100,pad=4),
                   paper_bgcolor="LightSteelBlue",)
+```
+COMPILE=TRUE
 """},
 {'role':'user','content':"""Plot the unit circle on the complex plane."""},
 {'role':'assistant','content':f"""
-
+Sure GIF={{anime girl math}}
+```
 import numpy as np
 import plotly.graph_objects as go
 
@@ -226,9 +251,13 @@ fig.update_yaxes(
 fig.update_layout(title='Unit Circle on the Complex Plane',
                   xaxis_title='Real Part',
                   yaxis_title='Imaginary Part')
+```
+COMPILE=TRUE
 """},
 {'role':'user','content':"""Plot the sphere f(u,v) = (cos(u)sin(v),sin(u)sin(v),cos(v)) for u between 0 and 2pi and v between 0 and pi using plotly."""},
 {'role':'assistant','content':f"""
+This is how you do it. GIF={{anime girl dance}}
+```
 import numpy as np
 import plotly.graph_objects as go
 
@@ -254,10 +283,13 @@ fig = go.Figure(data=[go.Surface(z=z, x=x, y=y)])
 fig.update_layout(title='Plot of the Sphere', autosize=False,
                   width=500, height=500,
                   margin=dict(l=65, r=50, b=65, t=90))
+```
+COMPILE=TRUE
 """},
 {'role':'user','content':"""Plot sin(x) between -1 and 1. Fill the area under the curve."""},
 {'role':'assistant','content':f"""
-
+GIF={{anime girl nod}}
+```
 import numpy as np
 import plotly.graph_objects as go
 
@@ -278,22 +310,45 @@ fig.add_trace(go.Scatter(x=x, y=y, fill='tozeroy', mode='none', name='area'))
 
 # Set the title and labels
 fig.update_layout(title='sin(x) between -1 and 1', xaxis_title='x', yaxis_title='sin(x)')
+```
+COMPILE=TRUE
 """},
 {'role':'user','content':"""Can you give me the titanic data from the seaborn package?"""},
 {'role':'assistant','content':f"""
+GIF={{anime girl hacker}}
+```
 import seaborn as sns
 import pandas as pd
 
 # Load the Titanic dataset from seaborn
 data = sns.load_dataset('titanic')
+```
+COMPILE=TRUE
 """},
 {'role':'user','content':'What is the average of all even numbers from 2 to 20?'},
 {'role':'assistant','content':f"""
+GIF={{anime girl math}}
+```
 import pandas as pd
 
 data = pd.Series([x for x in range(0,20,2)])
 answer = data.mean()
-"""}
+```
+COMPILE=TRUE
+"""},
+{'role':'user','content':'Write python to import a CSV file into pandas'},
+{'role':'assistant','content':f"""
+To import a CSV file into python, you can use pandas.
+```
+import pandas as pd
+
+data = pd.read_csv('/path/to/file.csv')
+data
+```
+COMPILE=FALSE
+"""},
+{'role':'user','content':'Hi Fefe. :3'},
+{'role':'assistant','content': 'Hello! How can I assist you today? GIF={anime girl wave}'}
 ]
 
 samples_pair = [[samples[i],samples[i+1]] for i in range(0,len(samples),2)]
