@@ -1,5 +1,7 @@
 # Alshival's Graphing Calculator
 
+Quick run down on the process available on [Substack](https://alshival.substack.com/p/data-visualization-generation-using).
+
 <img src="https://github.com/alshival/data_viz_bot_tutorial/blob/main/Screenshot%202024-03-29%20175801.png">
 
 ## Setup
