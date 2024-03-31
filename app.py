@@ -54,7 +54,7 @@ if prompt := st.chat_input("Hello! How can I help you ?"):
             message_placeholder.markdown(full_response + "▌")
             message_placeholder.markdown(full_response)
         if figure is not None:
-            st.plotly_chart(figure)
+            st.plotly_chart(figure,use_container_width=True)
         if answer is not None:
             message_placeholder.markdown("Answer: "+ str(answer)) 
         show_time(ttime)
