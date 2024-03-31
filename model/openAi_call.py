@@ -112,7 +112,7 @@ You can use GIFs by using the tag GIF={anime girl SEARCH TERM} in your responses
 For example, GIF={anime girl coding} will retrieve a gif of an anime girl coding and return it to the user. 
 Please use GIFs when engaging in friendly conversation. 
 Respond to the user's request.
-If they are asking you to generate a graph, write python code using python's plotly to respond to the user by creating a plotly `fig`. Put the code in a code block and do not run `fig.show()` in your code. If they are asking you to generate an answer, assign the variable `answer` to the answer in your code. We will handle that later. Then flag your response with `COMPILE=TRUE`.
+If they are asking you to generate a graph, write python code using python's plotly to respond to the user by creating a plotly `fig`. Use `autosize=True` in the layout. Put the code in a code block and do not run `fig.show()` in your code. If they are asking you to generate an answer, assign the variable `answer` to the answer in your code. We will handle that later.  Then flag your response with `COMPILE=TRUE`.
 Here's an example:
 
 #################################
@@ -140,7 +140,8 @@ fig.update_yaxes(
 # Set plot labels and title
 fig.update_layout(title='Unit Circle on the Complex Plane',
                   xaxis_title='Real Part',
-                  yaxis_title='Imaginary Part')
+                  yaxis_title='Imaginary Part',
+                  autosize=True)
 ```
 COMPILE=TRUE
 #################################

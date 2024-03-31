@@ -19,8 +19,7 @@ z = a * np.sin(theta)
 fig = go.Figure(data=[go.Surface(x=x, y=y, z=z)])
 
 # Set the title and axis labels
-fig.update_layout(title='3D Torus', autosize=False,
-                  width=800, height=800,
+fig.update_layout(title='3D Torus', autosize=True,
                   margin=dict(l=50, r=50, b=100, t=100))
 ```
 COMPILE=TRUE
@@ -57,7 +56,7 @@ fig.add_trace(go.Scatter(x=x, y=f(x), mode='lines', name="f(x) = 2x^2 + 3x + 5")
 fig.add_trace(go.Scatter(x=x, y=tangent_line(x, a), mode='lines', name=f"Tangent line at x = {{a}}"))
 
 # Set the title and labels
-fig.update_layout(title="Function and Tangent Line", xaxis_title="x", yaxis_title="y")
+fig.update_layout(title="Function and Tangent Line", xaxis_title="x", yaxis_title="y",autosize=True)
 
 # Add an annotation with the equation of the tangent line
 slope = df(a)
@@ -95,7 +94,7 @@ fig.add_annotation(text=integral_text,
                    xref="paper", yref="paper",
                    x=0.8, y=0.8, showarrow=False)
 
-fig.update_layout(title='Integration of f(x) = -3x^2+2x+1', xaxis_title='x', yaxis_title='f(x)')
+fig.update_layout(title='Integration of f(x) = -3x^2+2x+1', xaxis_title='x', yaxis_title='f(x)',autosize=True)
 ```
 COMPILE=TRUE
 """},
@@ -133,7 +132,7 @@ trace2 = go.Scatter(x=list(x_fill) + list(reversed(x_fill)),
                     showlegend=False)
 
 # Create a layout with an annotation for the integral value
-layout = go.Layout(annotations=[dict(x=0.5, y=0.2, text=f'Integral = {{integral:.2f}}', showarrow=False)])
+layout = go.Layout(annotations=[dict(x=0.5, y=0.2, text=f'Integral = {{integral:.2f}}', showarrow=False)],autosize=True)
 
 # Create a figure from the traces and layout, and show it
 fig = go.Figure(data=[trace1, trace2], layout=layout)
@@ -163,8 +162,9 @@ fig = go.Figure(data=go.Scatter(x=x, y=y, mode='lines'))
 
 # Set plot labels and title
 fig.update_layout(title='Plot of the Golden Spiral',
-                  xaxis_title='x',
-                  yaxis_title='y')
+    autosize=True,
+    xaxis_title='x',
+    yaxis_title='y')
 ```
 COMPILE=TRUE
 """},
@@ -190,9 +190,7 @@ fig = go.Figure(data=go.Scatter(x=x, y=y, mode='lines'))
 fig.update_layout(title='Plot of f(x) = e^x mod 3', 
                   xaxis_title='x', 
                   yaxis_title='f(x)', 
-                  autosize=False,
-                  width=800,
-                  height=500,
+                  autosize=True,
                   margin=dict(l=50,r=50,b=100,t=100,pad=4),
                   paper_bgcolor="LightSteelBlue",)
 ```
@@ -221,8 +219,9 @@ fig.update_yaxes(
 
 # Set plot labels and title
 fig.update_layout(title='Unit Circle on the Complex Plane',
-                  xaxis_title='Real Part',
-                  yaxis_title='Imaginary Part')
+    xaxis_title='Real Part',
+    yaxis_title='Imaginary Part',
+    autosize=True)
 ```
 COMPILE=TRUE
 """},
@@ -252,8 +251,7 @@ x, y, z = f(u, v)
 fig = go.Figure(data=[go.Surface(z=z, x=x, y=y)])
 
 # Update layout
-fig.update_layout(title='Plot of the Sphere', autosize=False,
-                  width=500, height=500,
+fig.update_layout(title='Plot of the Sphere', autosize=True,
                   margin=dict(l=65, r=50, b=65, t=90))
 ```
 COMPILE=TRUE
@@ -281,7 +279,7 @@ fig.add_trace(go.Scatter(x=x, y=y, mode='lines', name='sin(x)'))
 fig.add_trace(go.Scatter(x=x, y=y, fill='tozeroy', mode='none', name='area'))
 
 # Set the title and labels
-fig.update_layout(title='sin(x) between -1 and 1', xaxis_title='x', yaxis_title='sin(x)')
+fig.update_layout(title='sin(x) between -1 and 1', xaxis_title='x', yaxis_title='sin(x)',autosize=True)
 ```
 COMPILE=TRUE
 """},
